@@ -1,0 +1,30 @@
+@font-face {
+  font-family: arcadeFont;
+  src: url(../../fonts/VCR_OSD_MONO_1.001.ttf);
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: inline;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.navbar li {
+  float: left;
+}
+
+.navbar li a {
+  display: block;
+  color: rgb(32, 179, 76);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: arcadeFont, Charcoal, sans-serif;
+}
+
+/* Change the link color to #111 (black) on hover */
+.navbar li a:hover {
+  color: blue;
+}
