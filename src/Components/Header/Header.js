@@ -1,25 +1,14 @@
 import "./Header.css";
+import SpaceInvaders from '../SpaceInvaders/SpaceInvaders';
+import NavBar from "../NavBar/NavBar";
 
 function Header() {
   return (
     <header id="home">
-      <nav className="navbar">
-        <ul>
-          <li>
-            <a href="#home">Home</a>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a href="#about">About Me</a>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a href="#projects">Projects</a>
-          </li>
-        </ul>
-      </nav>
+      <NavBar />
+      <div className="content">
+        <SpaceInvaders />
+      </div>
     </header>
   );
 }

@@ -11,7 +11,7 @@
   overflow: hidden;
 }
 
-.navbar li {
+.left-buttons {
   float: left;
 }
 
@@ -26,5 +26,23 @@
 
 /* Change the link color to #111 (black) on hover */
 .navbar li a:hover {
-  color: blue;
+  color: rgb(70, 238, 126);
+}
+
+header .content {
+  color: white;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 auto;
+  width: 100%;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.right-buttons {
+  float: right;
+}
+
+canvas {
+  padding: 25px;
 }
