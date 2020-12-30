@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import Cannon from "../Cannon/Cannon";
 import Invader from "../Invader/Invader";
+import "./SpaceInvaders.css";
 
 function SpaceInvaders() {
   useEffect(() => {
     var canvas = document.getElementById("space-invaders");
-    console.log(canvas.getContext("2d"));
     var myGameArea = {
       start: function () {
         this.context = canvas.getContext("2d");
@@ -18,11 +19,13 @@ function SpaceInvaders() {
         this.context.clearRect(0, 0, canvas.width, canvas.height);
       },
     };
+
     var invaders = [];
     var invaderRows = [];
+    var cannon  = new Cannon(myGameArea, canvas.height*0.05, canvas.height*0.05, 0, canvas.height*0.9);
     invaderRows.push(
-      "Joseph Eid, Software Engineer",
-      "currently working in London UK"
+      " Joseph Eid, Software Engineer",
+      "currently working in London, UK"
     );
 
     for (var i = 0; i < invaderRows.length; i++) {
@@ -31,25 +34,31 @@ function SpaceInvaders() {
           new Invader(
             myGameArea,
             invaderRows[i][j],
-            10,
-            10,
-            j * 10,
+            canvas.height*0.025,
+            canvas.height*0.025,
+            j * 20,
             (i + 1) * 30
           )
         );
       }
     }
-
+    canvas.onmousemove = getMousePos;
     myGameArea.start();
 
     function updateGameArea() {
       myGameArea.clear();
       invaders.forEach((x) => x.newPos());
-      invaders.forEach((x) => x.update());
+      invaders.forEach((x) => x.draw());
+      cannon.draw();
+    }
+
+    function getMousePos(evt) {
+      var rect = canvas.getBoundingClientRect();
+      cannon.newPos(evt.clientX - rect.left - cannon.width/2);
     }
   });
-
-  return <canvas width="800px" height="800px" id="space-invaders" />;
+  
+  return <canvas width={`${window.screen.width*0.55}px`} height={`${window.screen.width*0.38}px`} id="space-invaders" />;
 }
 
 export default SpaceInvaders;

@@ -24,7 +24,6 @@
   font-family: arcadeFont, Charcoal, sans-serif;
 }
 
-/* Change the link color to #111 (black) on hover */
 .navbar li a:hover {
   color: rgb(70, 238, 126);
 }
@@ -41,8 +40,4 @@ header .content {
 
 .right-buttons {
   float: right;
-}
-
-canvas {
-  padding: 25px;
 }

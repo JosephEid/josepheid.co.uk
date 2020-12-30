@@ -8,10 +8,9 @@ function Invader(myGameArea, text, width, height, x, y) {
   this.x = x;
   this.y = y;
 
-  this.update = function() {
+  this.draw = function() {
       var ctx = myGameArea.context;
       ctx.save();
-      ctx.translate(this.x, this.y);
       ctx.fillStyle = "white";
       ctx.font = 'bold 2em arcadeFont';
       ctx.fillText(this.text, this.x, this.y);  
@@ -19,9 +18,8 @@ function Invader(myGameArea, text, width, height, x, y) {
   }
 
   this.newPos = function() {
-      this.angle += this.moveAngle * Math.PI / 180;
-      this.x += this.speed * Math.sin(this.angle);
-      // this.y -= this.speed * Math.cos(this.angle);
+    this.angle += this.moveAngle * Math.PI / 240;
+    this.x += this.speed * Math.sin(this.angle);
   }
 }
 
