@@ -1,10 +1,11 @@
-function Shot(myGameArea, width, height, x, y) {
+function CannonShot(myGameArea, width, height, x, y) {
   this.width = width;
   this.height = height;
   this.x = x;
   this.y = y;
-  this.speed = 1.5;
-
+  this.speed = 4;
+  this.type = "cannon";
+  
   this.draw = function() {
     var ctx = myGameArea.context;
     ctx.save();
@@ -20,4 +21,4 @@ function Shot(myGameArea, width, height, x, y) {
   }
 }
 
-export default Shot;
+export default CannonShot;

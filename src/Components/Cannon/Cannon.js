@@ -1,4 +1,4 @@
-import Shot from "../Shot/Shot";
+import CannonShot from "../CannonShot/CannonShot";
 
 function Cannon(myGameArea, width, height, x, y) {
   this.width = width;
@@ -34,7 +34,7 @@ function Cannon(myGameArea, width, height, x, y) {
   };
 
   this.createShot = function () {
-    return new Shot(
+    return new CannonShot(
       myGameArea,
       0.1 * this.spriteWidth,
       0.4 * this.spriteHeight,

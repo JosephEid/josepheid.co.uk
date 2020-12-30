@@ -1,5 +1,4 @@
 function NavBar() {
-  
   return (
     <nav className="navbar">
       <ul>
@@ -20,7 +19,7 @@ function NavBar() {
         </li>
       </ul>
     </nav>
-  )
+  );
 }
 
 export default NavBar;
