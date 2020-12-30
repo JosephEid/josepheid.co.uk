@@ -14,7 +14,9 @@ function Invader(myGameArea, text, width, height, x, y) {
       ctx.fillStyle = "white";
       ctx.font = 'bold 2em arcadeFont';
       ctx.fillText(this.text, this.x, this.y);  
-      ctx.restore();    
+      ctx.restore();
+      this.spriteWidth = this.width;
+      this.spriteHeight = this.height;
   }
 
   this.newPos = function() {

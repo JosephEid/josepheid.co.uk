@@ -22,6 +22,7 @@ function SpaceInvaders() {
 
     var invaders = [];
     var invaderRows = [];
+    var cannonShots = [];
     var cannon  = new Cannon(myGameArea, canvas.height*0.05, canvas.height*0.05, 0, canvas.height*0.9);
     invaderRows.push(
       " Joseph Eid, Software Engineer",
@@ -43,18 +44,31 @@ function SpaceInvaders() {
       }
     }
     canvas.onmousemove = getMousePos;
+    canvas.onmousedown = shoot;
     myGameArea.start();
 
     function updateGameArea() {
       myGameArea.clear();
-      invaders.forEach((x) => x.newPos());
       invaders.forEach((x) => x.draw());
+      invaders.forEach((x) => x.newPos());
+      cannonShots.forEach((x) => x.draw());
+      cannonShots.forEach((x) => x.newPos());
+      cannonShots.forEach((x) => checkIfOob(x));
       cannon.draw();
     }
 
+    function checkIfOob(shot) {
+      if (shot.y < 0) {
+        cannonShots.splice(cannonShots.indexOf(shot), 1);
+      }
+    }
     function getMousePos(evt) {
       var rect = canvas.getBoundingClientRect();
       cannon.newPos(evt.clientX - rect.left - cannon.width/2);
+    }
+
+    function shoot(evt) {
+      cannonShots.push(cannon.createShot());
     }
   });
   
