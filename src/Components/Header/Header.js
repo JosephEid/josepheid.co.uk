@@ -1,8 +1,9 @@
-import "./Header.css";
-import SpaceInvaders from '../SpaceInvaders/SpaceInvaders';
-import NavBar from "../NavBar/NavBar";
+import React from 'react'
+import './Header.css'
+import SpaceInvaders from '../SpaceInvaders/SpaceInvaders'
+import NavBar from '../NavBar/NavBar'
 
-function Header() {
+function Header () {
   return (
     <header id="home">
       <NavBar />
@@ -10,7 +11,7 @@ function Header() {
         <SpaceInvaders />
       </div>
     </header>
-  );
+  )
 }
 
-export default Header;
+export default Header
