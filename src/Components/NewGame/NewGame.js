@@ -9,7 +9,7 @@ function NewGame (canvas) {
     start () {
       this.context = canvas.getContext('2d')
       this.frameNo = 0
-      this.shotInvertal = setInterval(randomShot, 1000)
+      this.shotInvertal = setInterval(randomShot, 400)
       this.interval = setInterval(updateGameArea, 20)
     },
     stop () {
@@ -89,13 +89,19 @@ function NewGame (canvas) {
     ctx.fillStyle = 'rgb(32, 179, 76)'
     ctx.font = 'bold 2em arcadeFont'
     ctx.fillText(
-      `You win with a score of: ${score}`,
-      0.1 * canvas.width,
+      'YOU WIN',
+      0.4 * canvas.width,
       0.5 * canvas.height
+    )
+    ctx.fillStyle = 'white'
+    ctx.fillText(
+      `Score: ${score}`,
+      0.4125 * canvas.width,
+      0.6 * canvas.height
     )
     ctx.fillText(
       'Click anywhere to try again.',
-      0.1 * canvas.width,
+      0.175 * canvas.width,
       0.7 * canvas.height
     )
     end = true
@@ -103,16 +109,22 @@ function NewGame (canvas) {
 
   function drawLose () {
     const ctx = myGameArea.context
-    ctx.fillStyle = 'rgb(32, 179, 76)'
+    ctx.fillStyle = 'red'
     ctx.font = 'bold 2em arcadeFont'
     ctx.fillText(
-      `You lost with a score of: ${score}`,
-      0.1 * canvas.width,
+      'GAME OVER',
+      0.4 * canvas.width,
       0.5 * canvas.height
+    )
+    ctx.fillStyle = 'white'
+    ctx.fillText(
+      `Score: ${score}`,
+      0.4125 * canvas.width,
+      0.6 * canvas.height
     )
     ctx.fillText(
       'Click anywhere to try again.',
-      0.1 * canvas.width,
+      0.175 * canvas.width,
       0.7 * canvas.height
     )
     end = true

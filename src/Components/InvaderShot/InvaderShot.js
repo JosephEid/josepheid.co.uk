@@ -3,7 +3,7 @@ function InvaderShot (myGameArea, width, height, x, y) {
   this.height = height
   this.x = x
   this.y = y
-  this.speed = 4
+  this.speed = 10
   this.type = 'invader'
 
   this.draw = function () {
