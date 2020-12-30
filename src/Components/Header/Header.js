@@ -4,12 +4,16 @@ import SpaceInvaders from '../SpaceInvaders/SpaceInvaders'
 import NavBar from '../NavBar/NavBar'
 
 function Header () {
+  const screenHeight = window.innerHeight
   return (
-    <header id="home">
+    <header id="home" style={{ height: `${screenHeight}px` }} className="Header">
       <NavBar />
-      <div className="content">
+      <div className="Header__Content">
         <SpaceInvaders />
       </div>
+      <a className="Header__Down-Button" href="#about">
+        <i></i>
+      </a>
     </header>
   )
 }

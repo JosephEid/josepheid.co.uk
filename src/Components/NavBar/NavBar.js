@@ -1,4 +1,6 @@
-function NavBar() {
+import React from 'react'
+
+function NavBar () {
   return (
     <nav className="navbar">
       <ul>
@@ -12,14 +14,14 @@ function NavBar() {
           <a href="#projects">Projects</a>
         </li>
         <li className="right-buttons">
-          <a className="github-button" href="https://github.com/JosephEid">
-            {/* <FontAwesomeIcon icon={github} /> */}
+          <a className="github-button" href="https://github.com/JosephEid" target='_blank' rel="noreferrer">
+            <i className="fa fa-github"></i>
             Github
           </a>
         </li>
       </ul>
     </nav>
-  );
+  )
 }
 
-export default NavBar;
+export default NavBar
