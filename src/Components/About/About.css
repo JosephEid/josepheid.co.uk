@@ -1,0 +1,23 @@
+.About__Row {
+  padding: 25px;
+  display: flex;
+}
+
+.About__Col-9 {
+  width: 75%;
+}
+
+.About__Col-3 {
+  width: 25%;
+}
+
+.About__ProfilePic {
+  padding-top: 20px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.About {
+  background-color: rgb(32, 179, 76);
+}

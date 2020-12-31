@@ -15,7 +15,7 @@ function NavBar () {
         </li>
         <li className="right-buttons">
           <a className="github-button" href="https://github.com/JosephEid" target='_blank' rel="noreferrer">
-            <i className="fa fa-github"></i>
+            <i className="fa fa-github" style={{ paddingRight: '5px' }} />
             Github
           </a>
         </li>

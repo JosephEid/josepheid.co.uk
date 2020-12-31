@@ -10,8 +10,8 @@ function SpaceInvaders () {
 
   return (
     <canvas
-      width={`${window.screen.width * 0.55}px`}
-      height={`${window.screen.width * 0.38}px`}
+      width={`${window.innerWidth * 0.9}px`}
+      height={`${window.innerHeight * 0.8}px`}
       id="space-invaders"
     />
   )
