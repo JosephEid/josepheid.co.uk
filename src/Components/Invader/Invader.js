@@ -4,7 +4,7 @@ function Invader (myGameArea, text, width, height, x, y) {
   this.text = text
   this.width = width
   this.height = height
-  this.speed = 1
+  this.speed = 5
   this.angle = 0
   this.moveAngle = 1
   this.x = x
@@ -22,9 +22,12 @@ function Invader (myGameArea, text, width, height, x, y) {
     this.spriteHeight = this.height
   }
 
-  this.newPos = function () {
-    this.angle += this.moveAngle * Math.PI / 240
-    this.x += this.speed * Math.sin(this.angle)
+  this.newPos = function (distance) {
+    this.x += distance
+  }
+
+  this.rowDown = function (distance) {
+    this.y += distance
   }
 
   this.die = function () {

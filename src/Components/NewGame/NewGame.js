@@ -5,11 +5,14 @@ function NewGame (canvas) {
   let lives = 3
   let score = 0
   let end = false
+  let dir = 'R'
+
   const myGameArea = {
     start () {
       this.context = canvas.getContext('2d')
       this.frameNo = 0
       this.shotInvertal = setInterval(randomShot, 400)
+      this.xInterval = setInterval(moveInvaders, 1000)
       this.interval = setInterval(updateGameArea, 20)
     },
     stop () {
@@ -51,14 +54,13 @@ function NewGame (canvas) {
       )
     }
   }
+
   canvas.onmousemove = getMousePos
   canvas.onmousedown = handleClick
   myGameArea.start()
-
   function updateGameArea () {
     myGameArea.clear()
     invaders.forEach((x) => x.draw())
-    invaders.forEach((x) => x.newPos())
     cannonShots.forEach((x) => x.draw())
     cannonShots.forEach((x) => x.newPos())
     cannonShots.forEach((x) => checkIfOob(x))
@@ -71,6 +73,23 @@ function NewGame (canvas) {
     drawScoreboard()
     checkEnd()
   }
+
+  let distance = 50
+  function moveInvaders () {
+    const height = invaders[0].spriteHeight
+
+    if (invaders.some((x) => x.x >= canvas.width * 0.9) && dir === 'R') {
+      dir = 'L'
+      distance = -50
+      invaders.forEach((x) => x.rowDown(height))
+    } else if (invaders.some((x) => x.x <= canvas.width * 0.1) && dir === 'L') {
+      dir = 'R'
+      distance = 50
+      invaders.forEach((x) => x.rowDown(height))
+    }
+    invaders.forEach((x) => x.newPos(distance))
+  }
+
   function checkEnd () {
     const nonDeadInvaders = invaders.filter(
       (x) => x.fill === 'white' && x.text !== ' '
@@ -78,7 +97,7 @@ function NewGame (canvas) {
     if (nonDeadInvaders.length === 0) {
       myGameArea.stop()
       drawWin()
-    } else if (lives === 0) {
+    } else if (lives === 0 || invaders.some((x) => x.y >= canvas.height * 0.9)) {
       myGameArea.stop()
       drawLose()
     }
@@ -91,18 +110,13 @@ function NewGame (canvas) {
     ctx.fillText(
       'YOU WIN',
       0.4 * canvas.width,
-      0.5 * canvas.height
+      0.99 * canvas.height
     )
     ctx.fillStyle = 'white'
     ctx.fillText(
-      `Score: ${score}`,
-      0.4125 * canvas.width,
-      0.6 * canvas.height
-    )
-    ctx.fillText(
       'Click anywhere to try again.',
-      0.175 * canvas.width,
-      0.7 * canvas.height
+      0.55 * canvas.width,
+      0.99 * canvas.height
     )
     end = true
   }
@@ -114,18 +128,13 @@ function NewGame (canvas) {
     ctx.fillText(
       'GAME OVER',
       0.4 * canvas.width,
-      0.5 * canvas.height
+      0.99 * canvas.height
     )
     ctx.fillStyle = 'white'
     ctx.fillText(
-      `Score: ${score}`,
-      0.4125 * canvas.width,
-      0.6 * canvas.height
-    )
-    ctx.fillText(
       'Click anywhere to try again.',
-      0.175 * canvas.width,
-      0.7 * canvas.height
+      0.55 * canvas.width,
+      0.99 * canvas.height
     )
     end = true
   }

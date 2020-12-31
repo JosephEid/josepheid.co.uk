@@ -3,12 +3,30 @@
   display: flex;
 }
 
-.About__Col-9 {
+.About__Col-75 {
   width: 75%;
 }
 
-.About__Col-3 {
+.About__Col-25 {
   width: 25%;
+}
+
+.About__Col-33 {
+  width: 33.33%;
+}
+
+.About__Col-content {
+  width: 70%;
+  margin: auto;
+  text-align: left;
+}
+
+.About__Skills {
+  display: flex;
+}
+
+ul {
+  list-style-type: none;
 }
 
 .About__ProfilePic {
