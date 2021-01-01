@@ -35,11 +35,12 @@ function NewGame (canvas) {
     0,
     canvas.height * 0.9
   )
+
   invaderRows.push(
     ' Joseph Eid, Software Engineer',
     'currently working in London, UK'
   )
-
+  console.log(canvas.width)
   for (let i = 0; i < invaderRows.length; i++) {
     for (let j = 0; j < invaderRows[i].length; j++) {
       invaders.push(
@@ -48,8 +49,8 @@ function NewGame (canvas) {
           invaderRows[i][j],
           canvas.height * 0.025,
           canvas.height * 0.025,
-          j * 20,
-          (i + 1) * 30
+          j * (canvas.width / 64),
+          (i + 1) * (canvas.width / 43)
         )
       )
     }
@@ -212,7 +213,7 @@ function NewGame (canvas) {
 
   function getMousePos (evt) {
     const rect = canvas.getBoundingClientRect()
-    cannon.newPos(evt.clientX - rect.left - cannon.width / 2)
+    cannon.newPos(evt.clientX - rect.left - cannon.width)
   }
 
   function handleClick () {

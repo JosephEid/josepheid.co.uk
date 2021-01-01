@@ -15,7 +15,7 @@ function Invader (myGameArea, text, width, height, x, y) {
     const ctx = myGameArea.context
     ctx.save()
     ctx.fillStyle = this.fill
-    ctx.font = 'bold 2em arcadeFont'
+    ctx.font = `bold ${width * 1.5}px arcadeFont`
     ctx.fillText(this.text, this.x, this.y)
     ctx.restore()
     this.spriteWidth = this.width
