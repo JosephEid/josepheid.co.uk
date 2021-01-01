@@ -2,9 +2,39 @@
   "projects": [
     {
       "title": "anTSP",
-      "url": "",
-      "description": "",
-      "image": "Images/Projects/antsp.png"
+      "url": "https://antsp.herokuapp.com/",
+      "description": "My final year university dissertation project, a Flask web application which allows users to produce solutions to several instances of the Travelling Salesman Problem and displays results dynamically in a console.",
+      "image": "antsp.png"
+    },
+    {
+      "title": "Eventure",
+      "url": "https://github.com/JosephEid/Eventure",
+      "description": "A final year university project, a NodeJS web app which allows users to create/edit/delete events with a location which can be seen on a map. Linked to a Mongo Database.",
+      "image": "eventure.png"
+    },
+    {
+      "title": "Prolific Notifier",
+      "url": "https://github.com/JosephEid/ProlificNotifier",
+      "description": "A Google Chrome extension which tracks and alerts users when they get a study on prolific.co.",
+      "image": "prolificnotifier.png"
+    },
+    {
+      "title": "Advent of Code 2020",
+      "url": "https://github.com/JosephEid/AdventOfCode2020",
+      "description": "My C# solutions to the 2020 Advent of Code.",
+      "image": "aoc2020.png"
+    },
+    {
+      "title": "Bingo Invaders",
+      "url": "https://github.com/Andreas203/Bingo-Invaders",
+      "description": "A Java implementation of a crossover of traditional Bingo and Space Invaders, Tombola winner at HackSheffield 4.0",
+      "image": "bingoinvaders.jpg"
+    },
+    {
+      "title": "josepheid.co.uk",
+      "url": "https://github.com/JosephEid/josepheid.co.uk",
+      "description": "My personal website.",
+      "image": "josepheidcouk.png"
     }
   ]
 }

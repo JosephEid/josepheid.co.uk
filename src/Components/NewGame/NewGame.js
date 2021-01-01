@@ -32,7 +32,7 @@ function NewGame (canvas) {
     myGameArea,
     canvas.height * 0.05,
     canvas.height * 0.05,
-    0,
+    canvas.width / 2 - canvas.height * 0.05,
     canvas.height * 0.9
   )
 
@@ -107,7 +107,7 @@ function NewGame (canvas) {
   function drawWin () {
     const ctx = myGameArea.context
     ctx.fillStyle = 'rgb(32, 179, 76)'
-    ctx.font = 'bold 2em arcadeFont'
+    ctx.font = `bold ${canvas.height * 0.0375}px arcadeFont`
     ctx.fillText(
       'YOU WIN',
       0.4 * canvas.width,
@@ -125,7 +125,7 @@ function NewGame (canvas) {
   function drawLose () {
     const ctx = myGameArea.context
     ctx.fillStyle = 'red'
-    ctx.font = 'bold 2em arcadeFont'
+    ctx.font = `bold ${canvas.height * 0.0375}px arcadeFont`
     ctx.fillText(
       'GAME OVER',
       0.4 * canvas.width,
@@ -143,7 +143,7 @@ function NewGame (canvas) {
   function drawScoreboard () {
     const ctx = myGameArea.context
     ctx.fillStyle = 'rgb(32, 179, 76)'
-    ctx.font = 'bold 2em arcadeFont'
+    ctx.font = `bold ${canvas.height * 0.0375}px arcadeFont`
     ctx.fillText(
       `♥︎: ${lives}      score: ${score}`,
       0.01 * canvas.width,

@@ -1,7 +1,13 @@
 .Projects {
   background-color: rgb(191, 219, 190);
+  padding: 25px;
+}
+
+.Projects__List {
+  width: 70%;
+  margin: auto;
 }
 
 .Projects__Row {
-  padding: 25px;
+  display: flex;
 }
