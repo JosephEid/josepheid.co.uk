@@ -3,76 +3,13 @@
   src: url(../../fonts/VCR_OSD_MONO_1.001.ttf);
 }
 
-.navbar ul {
-  list-style-type: none;
-  display: inline;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-.left-buttons {
-  float: left;
-}
-
-.navbar {
-  overflow: hidden;
+.Header {
   background-color: #212020;
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
 }
-
-.navbar li a {
-  display: block;
-  color: rgb(32, 179, 76);
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-family: arcadeFont, Charcoal, sans-serif;
-}
-
-.navbar li a:hover {
-  color: rgb(70, 238, 126);
-}
-
 .Header__Content {
   display: inline-block;
   vertical-align: middle;
-  margin-top: 30px;
   width: 100%;
   padding-bottom: 30px;
   text-align: center;
-}
-
-/* scrolldown link */
-.Header__Down-Button {
-  background-color: rgb(32, 179, 76);
-  border: none;
-  color: #212020;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  border-radius: 50%;
-
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
-.Header__Down-Button:hover {
-  background-color: rgb(70, 238, 126);
-}
-
-.Header__DownIcon {
-  height: 10px;
-  width: auto;
-}
-
-.right-buttons {
-  float: right;
 }

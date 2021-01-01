@@ -9,5 +9,6 @@
 }
 
 .Projects__Row {
+  padding-top: 15px;
   display: flex;
 }

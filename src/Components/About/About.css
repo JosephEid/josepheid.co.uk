@@ -1,34 +1,3 @@
-.About__Row {
-  padding: 25px;
-  display: flex;
-}
-
-.About__Col-75 {
-  width: 75%;
-}
-
-.About__Col-25 {
-  width: 25%;
-}
-
-.About__Col-33 {
-  width: 33.33%;
-}
-
-.About__Col-content {
-  width: 70%;
-  margin: auto;
-  text-align: left;
-}
-
-.About__Skills {
-  display: flex;
-}
-
-ul {
-  list-style-type: none;
-}
-
 .About__ProfilePic {
   padding-top: 20px;
   width: 120px;
@@ -38,4 +7,14 @@ ul {
 
 .About {
   background-color: rgb(32, 179, 76);
+}
+
+.col > ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.container {
+  padding-top: 50px;
+  padding-bottom: 50px;
 }

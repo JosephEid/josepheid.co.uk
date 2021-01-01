@@ -1,0 +1,20 @@
+.Navbar {
+  background-color: #212020;
+}
+
+.Navbar__Toggler {
+  color: rgb(32, 179, 76) !important;
+}
+
+.Navbar__Link {
+  color: rgb(32, 179, 76) !important;
+  /* font-family: arcadeFont, Charcoal, sans-serif; */
+}
+
+.Navbar__Link:hover {
+  color: rgb(70, 238, 126) !important;
+}
+
+.navbar-toggler-icon {
+  background-image: url(../../Images/drawisland.png) !important;
+}

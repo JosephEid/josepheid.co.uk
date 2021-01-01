@@ -47,10 +47,10 @@ function NewGame (canvas) {
         new Invader(
           myGameArea,
           invaderRows[i][j],
-          canvas.height * 0.025,
-          canvas.height * 0.025,
-          j * (canvas.width / 64),
-          (i + 1) * (canvas.width / 43)
+          canvas.width * 0.025,
+          canvas.width * 0.025,
+          j * (canvas.width / 45),
+          (i + 1) * (canvas.width / 32)
         )
       )
     }
@@ -75,17 +75,17 @@ function NewGame (canvas) {
     checkEnd()
   }
 
-  let distance = 50
+  let distance = canvas.width * 0.05
   function moveInvaders () {
     const height = invaders[0].spriteHeight
 
     if (invaders.some((x) => x.x >= canvas.width * 0.9) && dir === 'R') {
       dir = 'L'
-      distance = -50
+      distance = -canvas.width * 0.05
       invaders.forEach((x) => x.rowDown(height))
     } else if (invaders.some((x) => x.x <= canvas.width * 0.1) && dir === 'L') {
       dir = 'R'
-      distance = 50
+      distance = canvas.width * 0.05
       invaders.forEach((x) => x.rowDown(height))
     }
     invaders.forEach((x) => x.newPos(distance))
@@ -107,7 +107,7 @@ function NewGame (canvas) {
   function drawWin () {
     const ctx = myGameArea.context
     ctx.fillStyle = 'rgb(32, 179, 76)'
-    ctx.font = `bold ${canvas.height * 0.0375}px arcadeFont`
+    ctx.font = `bold ${canvas.width * 0.0375}px arcadeFont`
     ctx.fillText(
       'YOU WIN',
       0.4 * canvas.width,
@@ -116,8 +116,8 @@ function NewGame (canvas) {
     ctx.fillStyle = 'white'
     ctx.fillText(
       'Click anywhere to try again.',
-      0.55 * canvas.width,
-      0.99 * canvas.height
+      0.5 * canvas.width - (20 * (canvas.width * 0.0375)) / 4,
+      0.5 * canvas.height
     )
     end = true
   }
@@ -125,7 +125,7 @@ function NewGame (canvas) {
   function drawLose () {
     const ctx = myGameArea.context
     ctx.fillStyle = 'red'
-    ctx.font = `bold ${canvas.height * 0.0375}px arcadeFont`
+    ctx.font = `bold ${canvas.width * 0.0375}px arcadeFont`
     ctx.fillText(
       'GAME OVER',
       0.4 * canvas.width,
@@ -134,8 +134,8 @@ function NewGame (canvas) {
     ctx.fillStyle = 'white'
     ctx.fillText(
       'Click anywhere to try again.',
-      0.55 * canvas.width,
-      0.99 * canvas.height
+      0.5 * canvas.width - (28 * (canvas.width * 0.0375)) / 4,
+      0.5 * canvas.height
     )
     end = true
   }
@@ -143,9 +143,9 @@ function NewGame (canvas) {
   function drawScoreboard () {
     const ctx = myGameArea.context
     ctx.fillStyle = 'rgb(32, 179, 76)'
-    ctx.font = `bold ${canvas.height * 0.0375}px arcadeFont`
+    ctx.font = `bold ${canvas.width * 0.0375}px arcadeFont`
     ctx.fillText(
-      `♥︎: ${lives}      score: ${score}`,
+      `♥︎: ${lives}  score: ${score}`,
       0.01 * canvas.width,
       0.99 * canvas.height
     )

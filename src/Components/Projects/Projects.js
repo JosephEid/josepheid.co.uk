@@ -1,7 +1,9 @@
 import React from 'react'
 import Project from '../Project/Project'
+// import CardGroup from 'react-bootstrap/CardGroup'
 
 import './Projects.css'
+import { CardDeck } from 'react-bootstrap'
 
 function Projects () {
   const data = require('../../data.json')
@@ -11,16 +13,16 @@ function Projects () {
     projectRows.push(projects.splice(0, 3))
   }
   const listProjects = projectRows.map((row, i) =>
-    <div className="Projects__Row" key={`${i}`}>
+    <div className='Projects__Row' key={`${i}`}>
+      <CardDeck>
         {row.map((project) => <Project key={project.name} data={project} />)}
+      </CardDeck>
     </div>
   )
   return (
     <section id="projects" className="Projects">
       <h2>Projects I&apos;ve Worked On</h2>
-      <div className="Projects__List">
-        {listProjects}
-      </div>
+      {listProjects}
     </section>
   )
 }
