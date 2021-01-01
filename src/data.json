@@ -33,7 +33,7 @@
     {
       "title": "josepheid.co.uk",
       "url": "https://github.com/JosephEid/josepheid.co.uk",
-      "description": "My personal website.",
+      "description": "My personal website in the form of a React App. Contains a React Space Invaders implementation.",
       "image": "josepheidcouk.png"
     }
   ]
