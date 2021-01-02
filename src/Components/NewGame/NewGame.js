@@ -233,7 +233,7 @@ function NewGame (canvas, isMobile) {
     if (end) {
       myGameArea.clear()
       end = false
-      NewGame(canvas)
+      NewGame(canvas, isMobile)
     } else {
       cannonShots.push(cannon.createShot())
     }
