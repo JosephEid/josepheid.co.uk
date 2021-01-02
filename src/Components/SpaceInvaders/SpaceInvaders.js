@@ -4,14 +4,14 @@ import './SpaceInvaders.css'
 
 function SpaceInvaders () {
   let isMobile = false
-
-  useEffect(() => {
-    const canvas = document.getElementById('space-invaders')
-    NewGame(canvas)
-  })
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     isMobile = true
   }
+  useEffect(() => {
+    const canvas = document.getElementById('space-invaders')
+    NewGame(canvas, isMobile)
+  })
+
   let width = window.innerWidth * 0.7
   let height = window.innerHeight * 0.6
 

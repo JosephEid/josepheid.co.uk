@@ -1,12 +1,11 @@
 import Cannon from '../Cannon/Cannon'
 import Invader from '../Invader/Invader'
 
-function NewGame (canvas) {
+function NewGame (canvas, isMobile) {
   let lives = 3
   let score = 0
   let end = false
   let dir = 'R'
-
   const myGameArea = {
     start () {
       this.context = canvas.getContext('2d')
@@ -14,6 +13,8 @@ function NewGame (canvas) {
       this.shotInvertal = setInterval(randomShot, 400)
       this.xInterval = setInterval(moveInvaders, 1000)
       this.interval = setInterval(updateGameArea, 20)
+      this.mobShotInterval = setInterval(mobShot, 700)
+      this.width = canvas.width
     },
     stop () {
       clearInterval(this.interval)
@@ -36,11 +37,16 @@ function NewGame (canvas) {
     canvas.height * 0.9
   )
 
+  function mobShot () {
+    if (isMobile) {
+      cannonShots.push(cannon.createShot())
+    }
+  }
   invaderRows.push(
     ' Joseph Eid, Software Engineer',
     'currently working in London, UK'
   )
-  console.log(canvas.width)
+
   for (let i = 0; i < invaderRows.length; i++) {
     for (let j = 0; j < invaderRows[i].length; j++) {
       invaders.push(
@@ -57,7 +63,14 @@ function NewGame (canvas) {
   }
 
   canvas.onmousemove = getMousePos
+  canvas.ontouchmove = touchMove
   canvas.onmousedown = handleClick
+
+  function touchMove (evt) {
+    const rect = canvas.getBoundingClientRect()
+    cannon.newPos(evt.changedTouches[0].clientX - rect.left - cannon.width)
+  }
+
   myGameArea.start()
   function updateGameArea () {
     myGameArea.clear()
@@ -81,11 +94,11 @@ function NewGame (canvas) {
 
     if (invaders.some((x) => x.x >= canvas.width * 0.9) && dir === 'R') {
       dir = 'L'
-      distance = -canvas.width * 0.05
+      distance = -canvas.width * 0.02
       invaders.forEach((x) => x.rowDown(height))
     } else if (invaders.some((x) => x.x <= canvas.width * 0.1) && dir === 'L') {
       dir = 'R'
-      distance = canvas.width * 0.05
+      distance = canvas.width * 0.02
       invaders.forEach((x) => x.rowDown(height))
     }
     invaders.forEach((x) => x.newPos(distance))

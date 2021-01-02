@@ -30,7 +30,9 @@ function Cannon (myGameArea, width, height, x, y) {
   }
 
   this.newPos = function (newX) {
-    this.x = newX
+    if (newX >= 0 && newX <= myGameArea.width - this.spriteWidth) {
+      this.x = newX
+    }
   }
 
   this.createShot = function () {
