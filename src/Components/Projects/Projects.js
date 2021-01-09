@@ -1,11 +1,10 @@
 import React from 'react'
 import Project from '../Project/Project'
-// import CardGroup from 'react-bootstrap/CardGroup'
-
-import './Projects.css'
 import { CardDeck } from 'react-bootstrap'
 
-function Projects () {
+import './Projects.css'
+
+const Projects = () => {
   const data = require('../../data.json')
   const projects = [...data.projects]
   const projectRows = []

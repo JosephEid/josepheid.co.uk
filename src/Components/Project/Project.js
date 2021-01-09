@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Card from 'react-bootstrap/Card'
 import './Project.css'
 
-function Project (props) {
+const Project = (props) => {
   const project = props.data
   return (
     <Card className="Project">

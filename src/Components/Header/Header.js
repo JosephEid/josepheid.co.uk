@@ -3,7 +3,7 @@ import './Header.css'
 import SpaceInvaders from '../SpaceInvaders/SpaceInvaders'
 import NavBar from '../NavBar/NavBar'
 
-function Header () {
+const Header = () => {
   const screenHeight = window.innerHeight
   return (
     <header id="home" style={{ height: `${screenHeight}px` }} className="Header">

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import NewGame from '../NewGame/NewGame'
 import './SpaceInvaders.css'
 
-function SpaceInvaders () {
+const SpaceInvaders = () => {
   let isMobile = false
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     isMobile = true
