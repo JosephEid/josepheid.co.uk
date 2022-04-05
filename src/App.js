@@ -1,17 +1,20 @@
 import React from 'react'
-import Header from './Components/Header/Header'
-import About from './Components/About/About'
-import Projects from './Components/Projects/Projects'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './Components/Home/Home'
 
 import './App.css'
+import HappyBirthday from './Components/HappyBirthday/HappyBirthday'
 
 function App () {
   return (
-    <div className="App">
-      <Header />
-      <About />
-      <Projects />
-    </div>
+    <BrowserRouter>
+      <div className='App'>
+        <Routes>
+          <Route path='/happyBirthday' element={<HappyBirthday />} />
+          <Route path='/' element={<Home />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   )
 }
 

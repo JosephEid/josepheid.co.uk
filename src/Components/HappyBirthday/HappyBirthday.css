@@ -1,0 +1,24 @@
+.gb {
+  height: 20vh;
+  animation: rotation 2s infinite linear;
+}
+
+.happy-birthday h1 {
+    font-size: calc(0.75em + 1vmin);
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.happy-birthday {
+    vertical-align: middle;
+}
+
+.itinerary {
+    width: 100%;
+}
