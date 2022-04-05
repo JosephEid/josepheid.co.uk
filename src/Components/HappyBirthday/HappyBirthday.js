@@ -34,6 +34,15 @@ const HappyBirthday = () => {
           />
         </Col>
       </Row>
+      <Row>
+        <Col>
+          <img
+            className="itinerary"
+            src='colliseum.png'
+            alt="Avatar"
+          />
+        </Col>
+      </Row>
     </div>
 
   )
