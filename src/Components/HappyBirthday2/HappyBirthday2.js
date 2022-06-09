@@ -7,7 +7,7 @@ const HappyBirthday2 = () => {
   return (
     <div className='happy-birthday'>
       <Row style={{ height: '200px' }}>
-        <Col style={{ backgroundColor: 'FFFFFF' }}>
+        <Col style={{ backgroundColor: '#FFFFFF' }}>
           <h1>
             Happy Birthday Hannah!
           </h1>
