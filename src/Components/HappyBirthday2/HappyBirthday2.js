@@ -22,7 +22,7 @@ const HappyBirthday2 = () => {
       </Row>
       <Row style={{ height: '200px' }}>
         <Col style={{ backgroundColor: '#DC143C' }}>
-        <div class="content">
+        <div className="content">
           <h1 style={{ textAlign: 'centre' }}>
             We&apos;re going to Krakow!!!
           </h1>
