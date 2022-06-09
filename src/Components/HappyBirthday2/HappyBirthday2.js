@@ -13,7 +13,7 @@ const HappyBirthday2 = () => {
           </h1>
           <img
             className="hs"
-            src='hands.jpg'
+            src='hands.png'
             alt="Avatar"
             style={{ padding: '10px' }}
           />
@@ -32,7 +32,7 @@ const HappyBirthday2 = () => {
       <Row style={{ height: '200px' }}>
           <img
             className="itinerary"
-            src='flights.jpg'
+            src='flights.png'
             alt="Avatar"
             style={{ height: '200px', width: 'auto' }}
           />
@@ -40,7 +40,7 @@ const HappyBirthday2 = () => {
       <Row style={{ height: '200px' }}>
           <img
             className="itinerary"
-            src='hotel.jpg'
+            src='hotel.png'
             alt="Avatar"
             style={{ height: '200px', width: 'auto' }}
           />
@@ -48,7 +48,7 @@ const HappyBirthday2 = () => {
       <Row style={{ height: '200px' }}>
           <img
             className="itinerary"
-            src='krakow.jpg'
+            src='krakow.png'
             alt="Avatar"
             style={{ height: '200px', maxWidth: '100%' }}
           />
