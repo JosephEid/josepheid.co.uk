@@ -15,15 +15,18 @@ const HappyBirthday2 = () => {
             className="hs"
             src='hands.jpg'
             alt="Avatar"
+            style={{ padding: '10px' }}
           />
         </Col>
 
       </Row>
       <Row style={{ height: '200px' }}>
         <Col style={{ backgroundColor: '#DC143C' }}>
-          <h1 style={{ padding: '15%' }}>
+        <div class="content">
+          <h1 style={{ textAlign: 'centre' }}>
             We&apos;re going to Krakow!!!
           </h1>
+          </div>
         </Col>
       </Row>
       <Row style={{ height: '200px' }}>
