@@ -1,0 +1,30 @@
+.hs {
+  height: 20vh;
+}
+
+.happy-birthday h1 {
+    font-size: calc(0.75em + 1vmin);
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+img {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.happy-birthday {
+    vertical-align: middle;
+}
+
+.itinerary {
+    width: 100%;
+}
