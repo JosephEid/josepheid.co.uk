@@ -29,7 +29,7 @@ const HappyBirthday2 = () => {
           </div>
         </Col>
       </Row>
-      <Row style={{ height: '200px' }}>
+      <Row style={{ height: '200px', backgroundColor: '#FFFFFF' }}>
           <img
             className="itinerary"
             src='flights.png'
@@ -37,7 +37,7 @@ const HappyBirthday2 = () => {
             style={{ height: '200px', width: 'auto' }}
           />
       </Row>
-      <Row style={{ height: '200px' }}>
+      <Row style={{ height: '200px', backgroundColor: '#FFFFFF' }}>
           <img
             className="itinerary"
             src='hotel.png'
